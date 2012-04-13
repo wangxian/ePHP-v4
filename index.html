@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<title>ePHP - 快速PHP开发for You!</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="demos/assets/css/screen.css" type="text/css" media="screen, projection">
+<link rel="stylesheet" href="demos/assets/css/print.css" type="text/css" media="print">
+<!--[if lt IE 8]><link rel="stylesheet" href="demos/assets/css/ie.css" type="text/css" media="screen, projection"><![endif]-->
+<style type="text/css">
+.container{width: 900px;}
+#header{margin-top:1.2em;}
+#mimg{width:904px;height:603px;background: url("demos/assets/images/welcome_shadow.png") no-repeat scroll 0 0 transparent;}
+#show_img{background-image: url("demos/assets/images/bg/1.jpg");background-repeat: no-repeat; border-top-left-radius: 5px; border-top-right-radius: 5px;
+	color: white; height: 500px; width: 900px;}
+#new_pic_desc{position:relative;left:20px;top:430px;}
+#new_pic_desc h2{color:white;color: #FFF;}
+#show_title{width:900px;height:100px;}
+#new_promo_text {color: #323232;float: left;font-size: 30px;font-weight: 600;letter-spacing: -1px;padding: 22px 0 0 20px;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);width: 640px;}
+#new_promo_text p{
+    color: #999999;font-size: 13px;
+    font-weight: 400;letter-spacing: 0;
+    margin: 2px 0 0;text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+#new_promo_button{float: right;padding:30px 20px 0 0;text-align: right;width: 206px;}
+#demo {
+    background: url("demos/assets/images/demo.png") no-repeat scroll 0 0 transparent;
+    height: 60px;margin: 0 0 2px 10px;width: 206px;}
+#demo:hover {background-position: 0 -60px;cursor: pointer;}
+</style>
+</head>
+<body>
+<div class="container">
+	<div id="header" class="span-24 last"><img src="demos/assets/images/logo.png" /></div>
+	<div id="mimg" class="span-24 last">
+		<div id="show_img">
+			<div id="new_pic_desc">
+				<h2>简单、高效、自由! 享受coding，享受生活！</h2>
+			</div>
+		</div>
+		<div id="show_title">
+			<div id="new_promo_text">
+				用ePHP，你可以快速创建高效PHP应用程序.
+				<p>简单、自由、自由、还是自由、无拘无束，来吧！ ePHP应该适合你，简约而不简单！</p>
+			</div>
+
+			<div id="new_promo_button">
+				<a href="demos/"><div id="demo"></div></a>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+var j = document.getElementById("show_img");
+j.style.backgroundImage='url("demos/assets/images/bg/'+ parseInt(1+Math.random() * 10) +'.jpg")';
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<?php if($url != '') echo '<meta http-equiv="refresh" content="'. $wait .';URL='. $url .'" />';?>
+
+<title>操作成功 - ephp</title>
+<style type="text/css">
+body {background-color:	#fff; margin:40px;font-family: Consolas, Verdana, Arial, sans-serif;}
+#content {border: 1px solid #E1E1E1;background-color:	#E8F3FF;padding:20px 20px 12px 20px;}
+h1{font-weight:normal;font-size:22px;color:#8000ff;margin:0 0 4px 0;}
+p{color:#000;font-size:13px;}
+
+#redirect{color:#999;}
+</style>
+</head>
+<body>
+	<div id="content">
+		<h1>Successful Operation</h1>
+		<p><?php echo $message;?></p>
+		<?php if($url != '') echo '<p id="redirect">'. $wait .' seconds later will be redirect, if not automatically jump, Please <a href="'. $url .'">click here</a>.</p>';?>
+	</div>
+</body>
+</html>

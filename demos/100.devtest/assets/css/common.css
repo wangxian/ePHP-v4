@@ -1,0 +1,82 @@
+#xbd
+{
+	margin:40px;
+	min-height:40px;
+	background-color:#FFEFC8;
+	border:1px #F3C984 solid;
+	padding:35px;
+	font-size:13px;
+}
+
+body {
+    color: #333333;
+    font-size: 14px;
+}
+
+ul {
+    list-style-image: url("../images/arrow.gif");
+    margin: 10px 0 12px;
+}
+
+
+.important {
+    background: none repeat scroll 0 0 #FBE6F2;
+    border: 1px solid #D893A1;
+    color: #333333;
+    margin: 10px 0 5px;
+    padding: 10px;
+}
+
+code,pre {
+    background-color: #F9F9F9;
+    border: 1px solid #D0D0D0;
+    color: #002166;
+    display: block;
+    font-family: Monaco,Verdana,Sans-serif;
+    font-size: 12px;
+    margin: 14px 0;
+    padding: 12px 10px;
+}
+
+h1 {
+    background-color: transparent;
+    border-bottom: 1px solid #666666;
+    color: #E13300;
+    font-size: 24px;
+    font-weight: normal;
+    margin: 0 0 20px;
+    padding: 3px 0 7px 3px;
+}
+
+h2 {
+    background-color: transparent;
+    border-bottom: 1px solid #999999;
+    color: #000000;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 28px 0 16px;
+    padding: 5px 0 6px;
+}
+
+dfn {
+    color: #00620C;
+    font-family: Lucida Grande,Verdana,Geneva,Sans-serif;
+    font-style: normal;
+    font-weight: bold;
+}
+
+samp {
+    color: #480091;
+    font-family: Lucida Grande,Verdana,Geneva,Sans-serif;
+    font-style: normal;
+    font-weight: bold;
+}
+
+.copyright {
+    color: #555555;
+    font-family: Arial;
+    font-size: 12px;
+    margin: 50px auto 10px;
+    text-align: center;
+    width: 640px;
+}
