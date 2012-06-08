@@ -618,10 +618,10 @@ class view
 		$content = ob_get_clean();
 		$_current = array_pop($this->_current);
 
-		if( empty($this->_layout[ $_current ]) ) echo "<!--{layout_block_{$_current}}-->";
+		if( !isset($this->_layout[ $_current ]) ) echo "<!--{layout_block_{$_current}}-->";
 
 		$this->_instack[ $_current ] = $content;
-		if(empty($this->_current))
+		if( empty($this->_current) )
 		{//延时反转得到正序的栈结构
 			if(count($this->_instack) > 1) $this->_instack = array_reverse($this->_instack);
 			$this->_layout =  array_merge($this->_layout, $this->_instack);
