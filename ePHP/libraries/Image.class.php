@@ -69,107 +69,39 @@ class Image
       */
      static public function thumbImg($srcfile,$dstfile,$thumbWidth,$thumbHeight)
      {
-        //缩略图大小
-        $tow = $thumbWidth;
-        $toh = $thumbHeight;
+        $imageinfo = getimagesize($srcfile);
+        if(empty($imageinfo)) throw new ephpException('只支持gif,jpg,png的图片');
+        // dump($imageinfo);
 
-        $make_max = 0;
-        $maxtow = $thumbWidth;
-        $maxtoh = $thumbHeight;
-        if($maxtow >= 300 && $maxtoh >= 300)
+        if($imageinfo[2] == 1) $im = imagecreatefromgif($srcfile);
+        elseif( $imageinfo[2] == 2 ) $im = imagecreatefromjpeg($srcfile);
+        elseif( $imageinfo[2] == 3 ) $im = imagecreatefrompng($srcfile);
+        else
         {
-            $make_max = 1;
+            throw new ephpException('只支持gif,jpg,png的图片');
         }
 
-        //获取图片信息
-        $im = '';
-        if(true == ($data = getimagesize($srcfile)) )
+        $w = $imageinfo[0];
+        $h = $imageinfo[1];
+
+        if( $thumbWidth/$thumbHeight > $w/$h )
         {
-            if($data[2] == 1)
-            {
-                $make_max = 0;//gif不处理
-                if(function_exists("imagecreatefromgif"))
-                    $im = imagecreatefromgif($srcfile);
-            }
-            elseif($data[2] == 2)
-            {
-                if(function_exists("imagecreatefromjpeg"))
-                    $im = imagecreatefromjpeg($srcfile);
-            }
-            elseif($data[2] == 3)
-            {
-                if(function_exists("imagecreatefrompng"))
-                    $im = imagecreatefrompng($srcfile);
-            }
-        }
-        if(!$im) return '';
-
-        $srcw = imagesx($im);
-        $srch = imagesy($im);
-
-        $towh = $tow/$toh;
-        $srcwh = $srcw/$srch;
-        if($towh <= $srcwh)
-        {
-            $ftow = $tow;
-            $ftoh = $ftow*($srch/$srcw);
-
-            $fmaxtow = $maxtow;
-            $fmaxtoh = $fmaxtow*($srch/$srcw);
+            $nh = $thumbHeight;
+            $nw = ($w*$thumbHeight)/$h;
         }
         else
         {
-            $ftoh = $toh;
-            $ftow = $ftoh*($srcw/$srch);
-
-            $fmaxtoh = $maxtoh;
-            $fmaxtow = $fmaxtoh*($srcw/$srch);
+            $nw = $thumbWidth;
+            $nh = ($h*$thumbWidth)/$w;
         }
+        // echo "w: $nw , h: $nh";exit;
 
-        if($srcw <= $maxtow && $srch <= $maxtoh)
-        {
-            $make_max = 0;//不处理
-        }
-
-        if($srcw > $tow || $srch > $toh)
-        {
-            if(function_exists("imagecreatetruecolor") && function_exists("imagecopyresampled") && @$ni = imagecreatetruecolor($ftow, $ftoh))
-            {
-                imagecopyresampled($ni, $im, 0, 0, 0, 0, $ftow, $ftoh, $srcw, $srch);
-                //大图片
-                if($make_max && @$maxni = imagecreatetruecolor($fmaxtow, $fmaxtoh))
-                {
-                    imagecopyresampled($maxni, $im, 0, 0, 0, 0, $fmaxtow, $fmaxtoh, $srcw, $srch);
-                }
-            }
-            elseif(function_exists("imagecreate") && function_exists("imagecopyresized") && @$ni = imagecreate($ftow, $ftoh))
-            {
-                imagecopyresized($ni, $im, 0, 0, 0, 0, $ftow, $ftoh, $srcw, $srch);
-                //大图片
-                if($make_max && @$maxni = imagecreate($fmaxtow, $fmaxtoh))
-                {
-                    imagecopyresized($maxni, $im, 0, 0, 0, 0, $fmaxtow, $fmaxtoh, $srcw, $srch);
-                }
-            }
-            else return '';
-
-            if(function_exists('imagejpeg'))
-            {
-                imagejpeg($ni, $dstfile);
-                //大图片
-                if($make_max) imagejpeg($maxni, $srcfile);
-            }
-            elseif(function_exists('imagepng'))
-            {
-                imagepng($ni, $dstfile);
-                //大图片
-                if($make_max) imagepng($maxni, $srcfile);
-            }
-            imagedestroy($ni);
-            if($make_max) imagedestroy($maxni);
-        }
+        $ni = imagecreatetruecolor($nw, $nh);
+        imagecopyresampled($ni, $im, 0, 0, 0, 0, $nw, $nh, $w, $h);
+        imagejpeg($ni, $dstfile);
         imagedestroy($im);
-        return file_exists($dstfile);
+
+        return true;
      }
 
      /**
