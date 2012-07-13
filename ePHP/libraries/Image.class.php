@@ -101,7 +101,7 @@ class Image
         imagejpeg($ni, $dstfile);
         imagedestroy($im);
 
-        return true;
+        return file_exists($dstfile);
      }
 
      /**
