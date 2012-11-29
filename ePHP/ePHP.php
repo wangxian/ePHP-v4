@@ -310,6 +310,7 @@ function R($url,$wait=0,$message='')
     {// redirect
         header("Content-Type:text/html; charset=UTF-8");
 		header("Location: {$url}");
+		exit;
 	}
     else
     {//html refresh
