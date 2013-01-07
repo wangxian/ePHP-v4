@@ -438,9 +438,7 @@ return array(
 	 */
 	public function clientAreaAction()
 	{
-		echo Http::clientArea();
-		echo '<hr />';
-		echo Http::clientArea('202.106.0.20');
+		dump( Http::clientArea('202.106.0.20') );
 	}
 
 	public function dumpAction()

@@ -239,9 +239,7 @@ class Http
 	static public function clientArea($ip='')
 	{
 		if(!$ip) $ip = self::clientIp ();
-		preg_match('/<li>([^<]*)/', file_get_contents('http://ip138.com/ips.asp?action=2&ip='.$ip),$ret);
-		$ret = explode('：', iconv('GB2312','UTF-8',$ret[1]));
-		return $ret[1];
+		return json_decode( file_get_contents('http://ip.taobao.com/service/getIpInfo.php?ip='. $ip), true);
 	}
 
 	/** 设置页面缓存,使表单在返回时不清空 */
