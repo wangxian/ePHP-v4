@@ -447,8 +447,11 @@ class app
 			$path_info = $_SERVER['PATH_INFO'];
 			if( C('url_router') ) #是否开启了路由
 			{
-				$first_param = substr($path_info,1,strpos($path_info,'/',1) - 1); #获取url上的第一个参数，用于对象router中的路由规则；
-				$config = include APP_PATH.'/conf/router.config.php';//请确认router.config.php存在
+				# 获取url上的第一个参数，用于对象router中的路由规则；
+				if( strpos($path_info,'/',1) ) $first_param = substr($path_info,1,strpos($path_info,'/',1) - 1);
+				else $first_param = substr($path_info, 1);
+
+				$config = include APP_PATH.'/conf/router.config.php';
 
 				if( isset($config[$first_param])) #避免触发E_NOTICE错误；
 				{
