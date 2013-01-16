@@ -31,14 +31,10 @@ h2{font-size: 24px; color: #262626; margin: 40px 0 20px 40px;}
 var $wait = <?php echo $wait;?>;
 var R = function() {<?php if( isset($_SERVER['HTTP_REFERER'])&&$url==$_SERVER['HTTP_REFERER'] ) echo 'window.history.go(-1);'; elseif($url) echo "window.location.href=\"{$url}\"";?>}
 if(document.getElementById("redirect")){
-    var WD = function(){
-        $wait--;
-        if(!$wait) R();
-        var $wt = document.getElementById("redirect").getElementsByTagName("em")[0].firstChild;
-        $wt.nodeValue = $wait;
-        setTimeout("WD()",1000);
-    }
-    setTimeout("WD()",1000);
+  var f = setInterval(function(){
+    if( $wait-- === 0 ) { R(); clearInterval(f); return false; }
+    document.getElementById("redirect").getElementsByTagName("em")[0].firstChild.nodeValue = $wait;
+  }, 1000);
 }
 </script>
 </body>
