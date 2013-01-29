@@ -2125,6 +2125,7 @@ class SMTP
     // connect to the smtp server
     $errno  = '';
     $errstr = '';
+    $tval   = '';
     $this->smtp_conn = @fsockopen($host,    // the host of the server
                                  $port,    // the port to use
                                  $errno,   // error number if any
