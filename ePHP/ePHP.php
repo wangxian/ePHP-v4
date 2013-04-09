@@ -22,7 +22,7 @@ function error_handler($errno, $errstr, $errfile, $errline )
 	throw new ephpException($errstr, $errno, array('errfile'=>$errfile, 'errline'=>$errline) );
 }
 
-function run_info(){ echo '<p id="run_info">运行耗时:', (microtime(1) - $GLOBALS['run_start_time'])*1000 ,'ms 数据库查询:', $GLOBALS['run_dbquery_count'] ,'次</p>';}
+function run_info($output=true){ $opstring = 'Total time:', (microtime(1) - $GLOBALS['run_start_time'])*1000 ,'ms DB Query:', $GLOBALS['run_dbquery_count']; if($output) echo $opstring; else return $opstring; }
 
 /**
  * 格式化输出，并停止
