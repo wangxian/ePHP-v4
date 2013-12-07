@@ -330,7 +330,7 @@ function R($url,$wait=0,$message='')
 function getv($key=0, $default='')
 {
 	if(! $key) return $_GET;
-	return isset($_GET[$key]) ?  $_GET[$key] : $default;
+	return isset($_GET[$key]) ?  trim($_GET[$key]) : $default;
 }
 
 /**
@@ -355,7 +355,7 @@ function getp($pos,$default='')
 		else $url_part = array('index','index');
 	}
 	$pos = $pos - 1;
-	return isset($url_part[$pos]) ? $url_part[$pos] : $default;
+	return isset($url_part[$pos]) ? trim($url_part[$pos]) : $default;
 }
 
 /**
@@ -368,7 +368,7 @@ function getp($pos,$default='')
 function postv($key=0, $default='')
 {
 	if(! $key) return $_POST;
-	return isset($_POST[$key]) ? $_POST[$key] : $default;
+	return isset($_POST[$key]) ? trim($_POST[$key]) : $default;
 }
 
 /**
@@ -381,7 +381,7 @@ function postv($key=0, $default='')
 function requestv($key=0, $default='')
 {
 	if(! $key) return $_REQUEST;
-	return isset($_REQUEST[$key]) ? $_REQUEST[$key] : $default;
+	return isset($_REQUEST[$key]) ? trim($_REQUEST[$key]) : $default;
 }
 
 /**
@@ -445,28 +445,40 @@ class app
 		if(! empty($_SERVER['PATH_INFO'])) #避免触发E_NOTICE错误；
 		{
 			$path_info = $_SERVER['PATH_INFO'];
-			if( C('url_router') ) #是否开启了路由
+
+			# 无目录的user-info-15.html
+			$nodir = C('url_type');
+			if($nodir == 'NODIR') $path_info = str_replace('-', '/', $path_info);
+
+			# 是否开启了路由
+			if( C('url_router') )
 			{
 				# 获取url上的第一个参数，用于对象router中的路由规则；
-				if( strpos($path_info,'/',1) ) $first_param = substr($path_info,1,strpos($path_info,'/',1) - 1);
-				else $first_param = substr($path_info, 1);
+				$first_param = substr($path_info,1,strpos($path_info,'/',1) - 1);
 
+				# 请确认router.config.php存在
 				$config = include APP_PATH.'/conf/router.config.php';
 
 				if( isset($config[$first_param])) #避免触发E_NOTICE错误；
 				{
 					foreach ($config[$first_param] as $v)
 					{
-						$count = 0; //记录成功替换的个数
+						$count = 0; // 记录成功替换的个数
+
+						# 如果是NODIR方式的URL，正则要替换
+						if($nodir == 'NODIR') $v[0] = str_replace('-', '/', $v[0]);
+
 						$path_info = preg_replace($v[0],$v[1],$path_info,-1,$count);
-						if($count > 0) break; //只要匹配上一个，则停止匹配，故在router.config.php从上到下有优先权。
+
+						# 只要匹配上一个，则停止匹配，故在router.config.php从上到下有优先权。
+						if($count > 0) break;
 					}
 				}
 			}
 
+			# 去掉扩展名
 			$html_url_subffix = C('html_url_suffix');
 			if( $html_url_subffix && TRUE == ($url_suffix_pos = strrpos($path_info, $html_url_subffix) ) ) $path_info = substr($path_info, 0, $url_suffix_pos);
-			if(C('url_type') == 'NODIR') $path_info = str_replace('-', '/', $path_info); // 无目录的user-info-15.html
 		}
 		return $path_info;
 	}
