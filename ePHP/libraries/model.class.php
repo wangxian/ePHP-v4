@@ -239,12 +239,7 @@ class model
 	 */
 	public function where($where,$noquote=array())
 	{
-		if(is_string($where))
-		{
-			$this->where = $where;
-			return $this;
-		}
-		else if(is_array($where))
+		if(is_array($where))
 		{
 			$tmp = array();
 			foreach ($where as $k=>$v)
@@ -256,8 +251,13 @@ class model
 				}
 				else $tmp[] = $k."=".$v; //不加引号
 			}
-			$this->where = implode(' AND ', $tmp);
+			$where = implode(' AND ', $tmp);
 		}
+
+		if(empty($this->where)) $this->where = $where;
+		else $this->where .= " AND ". $where;
+		// dump($this->where);
+
 		return $this;
 	}
 
