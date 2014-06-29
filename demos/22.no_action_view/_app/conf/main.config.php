@@ -32,7 +32,7 @@ return array
 	/* URL相关 */
 	'html_url_suffix'	=> '.html',	 	#伪静态后缀设置
 	'url_router' 		=> false,	 	#是否启用url路由功能
-	'url_type'			=> 'SEO',	#url类型PATH_INFO|GET|SEO(无index.php)|NODIR(如book-read.html)；
+	'url_type'			=> 'NODIR',	#url类型PATH_INFO|GET|SEO(无index.php)|NODIR(如book-read.html)；
 
 	/* 其他配置。 */
 	'assets_dir'		=> '',			#资源存放的目录，如/assets，最后不带 ‘/’

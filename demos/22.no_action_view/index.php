@@ -26,8 +26,6 @@
  */
 header('Content-Type:text/html; charset=UTF-8');
 
-var_dump($_SERVER);exit;
-
 // 时区设置。 建议在php.ini设置，如果虚拟主机的时区设置不对，可取消注释。
 date_default_timezone_set("PRC");
 

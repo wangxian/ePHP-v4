@@ -127,6 +127,10 @@ function __autoload($classname)
 	if(substr($classname,-10) == 'Controller')
 	{
 		if(file_exists(APP_PATH.'/controllers/'.$classname.'.php')) include APP_PATH.'/controllers/'.$classname.'.php';
+		else if(file_exists( $filename = APP_PATH . '/views/' . $_GET['controller'] . '/' . $_GET['action'].'.tpl.php' ))
+		{
+			include $filename;exit;
+		}
 		else if(! C('debug') )  show_404();
 		else show_error($classname .'没有定义，可能原因controllers/'. $classname .'.php不存在！');
 
