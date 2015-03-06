@@ -204,9 +204,11 @@ function QM($model_name, $db_config_name='default')
  */
 function wlog($name, $value)
 {
-	if(defined('SAE_ACCESSKEY')) return 0; //在SAE平台下，不写文件日志
-	if(! is_writeable(APP_PATH . '/runtime/logs/' )) show_error('警告： {APP_PATH}/runtime/logs/ 目录不可写！');
-	error_log( '['. date('H:i:s') .']' . $value ."\n", 3, APP_PATH . '/runtime/logs/' . $name . date('Y-m-d') .'.log');
+	# 在SAE平台下，不写文件日志
+	if(defined('SAE_ACCESSKEY')) return 0;
+	$logdir = C('log_dir') .'/';
+	if(! is_writeable($logdir) ) exit('ERROR: Log directory {'. $logdir .'} is not writeable, check the directory permissions!');
+	error_log( '['. date('H:i:s') .']' . $value ."\n", 3, $logdir . $name . date('Y-m-d') .'.log');
 }
 
 
@@ -709,7 +711,11 @@ if( file_exists(APP_PATH.'/conf/main.config.php') )
 	$config_main = include APP_PATH.'/conf/main.config.php';
 	$config = $config_main + $config;
 
-	//如果debug为true，则下面四项强制为true
+	# 自定义缓存和日志目录
+	if( empty($config['log_dir']) ) $config['log_dir'] = APP_PATH.'/runtime/logs';
+	if( empty($config['cache_dir']) ) $config['cache_dir'] = APP_PATH.'/runtime/cache';
+
+	# 如果debug为true，则下面四项强制为true
 	if( $config['debug'] )
 	{
 		$config['access_log'] 		= true;
@@ -752,6 +758,3 @@ if($config['access_log'])
 	$str.='------------------------------';
 	wlog('AccessLog', $str);
 }
-
-/* End of file ePHP.php */
-/* Location: ./_framework/ePHP.php */
