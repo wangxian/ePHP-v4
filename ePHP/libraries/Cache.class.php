@@ -17,7 +17,7 @@ class Cache
 {
 	private static $instance;
 	public $cache,$expire=0; //0,长期有效
-	
+
 	/**
 	 * cache初始化
 	 * 获取缓存示例，$cache = Cache::init();
@@ -139,7 +139,8 @@ class FileCacheX
 		$value = '<?php exit;?>'. $expire . serialize($value);
 
 		// 检查目录可写否
-		if(! is_writeable( APP_PATH.'/runtime/cache/' ) ) show_error('警告： {APP_PATH}/runtime/cache/ 目录不可写！');
+		$cachedir = C("cache_dir");
+		if(! is_writeable( $cachedir ) ) show_error('ERROR: '. $cache_dir .' is not writeable!');
 
 		return file_put_contents($this->_filename($key), $value);
 	}
@@ -161,7 +162,7 @@ class FileCacheX
 	 */
 	public function flush($dir='')
 	{
-		$dir = APP_PATH.'/runtime/cache/';
+		$dir = C("cache_dir");
 		Dir::deleteDir($dir);
 		mkdir($dir,0777);
 	}
@@ -175,20 +176,24 @@ class FileCacheX
 	private function _filename($key)
 	{
 		if(true == ( $dir_pos = strrpos($key ,'/') ) )
-		{//有子目录，也可能有多层子目录。
+		{
+			//有子目录，也可能有多层子目录。
 			$cache_name = substr($key,$dir_pos+1);
 
 			//缓存目录
-			$cache_dir = APP_PATH.'/runtime/cache/'.substr($key, 0, $dir_pos) . '/';
-			if( ! is_dir($cache_dir)) mkdir($cache_dir,0777,TRUE);//递归创建文件夹
+			$cache_dir = C('cache_dir') .'/'.substr($key, 0, $dir_pos) . '/';
+
+			// 递归创建文件夹
+			if( ! is_dir($cache_dir)) mkdir($cache_dir, 0777, TRUE);
 		}
 		else
-		{//无子目录
+		{
+			//无子目录
 			$cache_name = $key;
-			$cache_dir = APP_PATH.'/runtime/cache/';//缓存名称
+			$cache_dir = C('cache_dir') .'/';
 		}
 
-		#缓存文件名
+		// 缓存文件名
 		return $cache_dir . trim($cache_name) .'^'. md5($cache_name) .'.php';
 	}
 }
