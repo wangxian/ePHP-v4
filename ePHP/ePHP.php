@@ -12,8 +12,8 @@
  +------------------------------------------------------------------------------
  */
 
-$run_start_time = microtime(1);	# sys init time
-$run_dbquery_count = 0;			# db query cout
+$run_start_time = microtime(1);	// sys init time
+$run_dbquery_count = 0;			// db query cout
 
 /** @ignore */
 function error_handler($errno, $errstr, $errfile, $errline )
@@ -82,7 +82,7 @@ function C($name='', $config_name='main', $value=null)
     static $_config = array();
     if( $value === null )
     {//获取值
-	    # 加载其他配制文件
+	    // 加载其他配制文件
 	    if($config_name != 'main' && !isset( $_config[$config_name] ))
 	    {
 	    	$filename = APP_PATH .'/conf/'. $config_name .'.config.php';
@@ -121,7 +121,7 @@ function C($name='', $config_name='main', $value=null)
 function __autoload($classname)
 {
 	// echo $classname.'<hr />';
-	# 加载控制器
+	// 加载控制器
 	if(substr($classname,-10) == 'Controller')
 	{
 		if(file_exists(APP_PATH.'/controllers/'.$classname.'.php')) include APP_PATH.'/controllers/'.$classname.'.php';
@@ -132,14 +132,14 @@ function __autoload($classname)
 		else if(! C('debug') )  show_404();
 		else show_error($classname .'没有定义，可能原因controllers/'. $classname .'.php不存在！');
 
-	}# 加载用户模型
+	}// 加载用户模型
 	elseif(substr($classname,-5) == 'Model')
 	{
 		if(file_exists(APP_PATH.'/models/'.$classname.'.php')) include APP_PATH.'/models/'.$classname.'.php';
 		else show_error('模型：'.APP_PATH.'/models/'.$classname.'.php 文件不存在!');
 	}
 	else
-	{# 加载第三方库，位置在exts/下
+	{// 加载第三方库，位置在exts/下
 		$system_class = array(
 			'model','modelMS', 'Cookie', 'Session', 'Cache','ephpException', 'modelMongodb','Request', 'Email','Loader','Widget','MultiView',
 			'Http', 'Pinyin', 'Html', 'Validate', 'Regexp', 'Debug', 'Link', 'Xml', 'Date', 'Socket',
@@ -204,7 +204,7 @@ function QM($model_name, $db_config_name='default')
  */
 function wlog($name, $value)
 {
-	# 在SAE平台下，不写文件日志
+	// 在SAE平台下，不写文件日志
 	if(defined('SAE_ACCESSKEY')) return 0;
 	$logdir = C('log_dir') .'/';
 	if(! is_writeable($logdir) ) exit('ERROR: Log directory {'. $logdir .'} is not writeable, check the directory permissions!');
@@ -222,7 +222,7 @@ function wlog($name, $value)
  */
 function U($base, $param_arr=array())
 {
-	# if( function_exists('MY_U') ) return MY_U($base,$others_url);# 重载系统的U方法
+	// if( function_exists('MY_U') ) return MY_U($base,$others_url);// 重载系统的U方法
 	$urlx = ''; $url_type = C('url_type');
 	if($url_type == 'SEO' || $url_type == 'PATH_INFO')
 	{
@@ -236,10 +236,10 @@ function U($base, $param_arr=array())
 		return URL.'/'. $base . $urlx . C('html_url_suffix');
 	}
 	else
-	{# GET方式的url
+	{// GET方式的url
 		$tarr = explode('/', $base);
 
-		# 第一个参数，出控制器和action外，可能包含其他的参数。
+		// 第一个参数，出控制器和action外，可能包含其他的参数。
 		foreach ($tarr as $k=>$v)
 		{
 			if($k == 0)		  $urlx .= '?controller='.$v;
@@ -248,7 +248,7 @@ function U($base, $param_arr=array())
 			elseif($k%2 == 1) $urlx .= $v;
 		}
 
-		# 第二个额外参数
+		// 第二个额外参数
 		if(!empty($param_arr)) $urlx .= '&'.http_build_query($param_arr);
 
 		return URL.$urlx;
@@ -259,7 +259,7 @@ function U($base, $param_arr=array())
 /** 显示404页面 */
 function show_404()
 {
-	# header('HTTP/1.1 404 Not Found');
+	// header('HTTP/1.1 404 Not Found');
 	$tpl = C('tpl_404');
 	if(! $tpl ) include FW_PATH.'/tpl/404.tpl.php';
 	else include APP_PATH.'/views/public/'.$tpl;
@@ -274,7 +274,7 @@ function show_404()
  */
 function show_error($message, $url='', $wait=6)
 {
-	# header('HTTP/1.1 500 Internal Server Error');
+	// header('HTTP/1.1 500 Internal Server Error');
 	if( $url === '' && isset($_SERVER['HTTP_REFERER']) ) $url = $_SERVER['HTTP_REFERER'];
 	if(C('exception_log')) wlog('ExceptionLog', $message);
 
@@ -308,7 +308,7 @@ function show_success($message, $url='', $wait=6)
  */
 function R($url,$wait=0,$message='')
 {
-	# header("HTTP/1.1 301 Moved Permanently");
+	// header("HTTP/1.1 301 Moved Permanently");
     if(empty($message)) $message = "系统将在{$wait}秒之后自动跳转到{$url}！";
     if (!headers_sent() && (0===$wait) )
     {// redirect
@@ -318,7 +318,7 @@ function R($url,$wait=0,$message='')
 	}
     else
     {//html refresh
-    	# header("refresh:{$wait};url={$url}"); # 直接发送header头。
+    	// header("refresh:{$wait};url={$url}"); // 直接发送header头。
 		include FW_PATH.'/tpl/redirect.tpl.php';
 		exit;
     }
@@ -406,7 +406,7 @@ class app
 		$_GET['action'] 	= isset($_GET['action']) ? $_GET['action']  : 'index';
 
 		if(! empty($splits[0]) )
-		{# 在保证安全的前提下，进行兼容PATH_INFO和GET方式，如果是url混合方式，则以path_info为主
+		{// 在保证安全的前提下，进行兼容PATH_INFO和GET方式，如果是url混合方式，则以path_info为主
 			$_GET['controller'] = $splits[0];
 			$_GET['action'] = isset($splits[1]) ? $splits[1] : 'index';
 		}
@@ -446,41 +446,41 @@ class app
 	private function _path_info()
 	{
 		$path_info='';
-		if(! empty($_SERVER['PATH_INFO'])) # 避免触发E_NOTICE错误；
+		if(! empty($_SERVER['PATH_INFO'])) // 避免触发E_NOTICE错误；
 		{
 			$path_info = $_SERVER['PATH_INFO'];
 
-			#  无目录的user-info-15.html
+			//  无目录的user-info-15.html
 			$nodir = C('url_type');
 			if($nodir == 'NODIR') $path_info = str_replace('-', '/', $path_info);
 
-			#  是否开启了路由
+			//  是否开启了路由
 			if( C('url_router') )
 			{
-				#  获取url上的第一个参数，用于对象router中的路由规则；
+				//  获取url上的第一个参数，用于对象router中的路由规则；
 				$first_param = substr($path_info,1,strpos($path_info,'/',1) - 1);
 
-				#  请确认router.config.php存在
+				//  请确认router.config.php存在
 				$config = include APP_PATH.'/conf/router.config.php';
 
-				if( isset($config[$first_param])) # 避免触发E_NOTICE错误；
+				if( isset($config[$first_param])) // 避免触发E_NOTICE错误；
 				{
 					foreach ($config[$first_param] as $v)
 					{
 						$count = 0; // 记录成功替换的个数
 
-						#  如果是NODIR方式的URL，正则要替换
+						//  如果是NODIR方式的URL，正则要替换
 						if($nodir == 'NODIR') $v[0] = str_replace('-', '/', $v[0]);
 
 						$path_info = preg_replace($v[0],$v[1],$path_info,-1,$count);
 
-						#  只要匹配上一个，则停止匹配，故在router.config.php从上到下有优先权。
+						//  只要匹配上一个，则停止匹配，故在router.config.php从上到下有优先权。
 						if($count > 0) break;
 					}
 				}
 			}
 
-			#  去掉扩展名
+			//  去掉扩展名
 			$html_url_subffix = C('html_url_suffix');
 			if( $html_url_subffix && TRUE == ($url_suffix_pos = strrpos($path_info, $html_url_subffix) ) ) $path_info = substr($path_info, 0, $url_suffix_pos);
 		}
@@ -520,7 +520,7 @@ class controller
 				{
 					$model_name = substr($key,6) .'Model';
 
-					# import current model
+					// import current model
 					include APP_PATH . "/models/{$model_name}.php";
 					return $this->$key = new $model_name;
 				}
@@ -687,9 +687,9 @@ class view
 ///////////////////////////////////////////////////////////////////////////////////
 // 运行环境初始化
 ///////////////////////////////////////////////////////////////////////////////////
-set_error_handler("error_handler"); # 设置error异常处理函数
+set_error_handler("error_handler"); // 设置error异常处理函数
 
-# 默认系统配置
+// 默认系统配置
 $config = array
 (
 	'debug'				=> false,
@@ -705,17 +705,17 @@ $config = array
 	'cache_type'		=> 'FileCache'
 );
 
-# 导入app配置
+// 导入app配置
 if( file_exists(APP_PATH.'/conf/main.config.php') )
 {
 	$config_main = include APP_PATH.'/conf/main.config.php';
 	$config = $config_main + $config;
 
-	# 自定义缓存和日志目录
+	// 自定义缓存和日志目录
 	if( empty($config['log_dir']) ) $config['log_dir'] = APP_PATH.'/runtime/logs';
 	if( empty($config['cache_dir']) ) $config['cache_dir'] = APP_PATH.'/runtime/cache';
 
-	# 如果debug为true，则下面四项强制为true
+	// 如果debug为true，则下面四项强制为true
 	if( $config['debug'] )
 	{
 		$config['access_log'] 		= true;
@@ -728,16 +728,16 @@ C('', 'main',$config);
 
 $base_url = ( ($sdir = dirname($_SERVER['SCRIPT_NAME'])) == '/' || $sdir == '\\' ) ? '' : $sdir;
 
-# 设置资源目录的位置
-# 如果没有配置static_dir，则采用当前目下的assets/作为资源目录
+// 设置资源目录的位置
+// 如果没有配置static_dir，则采用当前目下的assets/作为资源目录
 if($config['static_dir'] == '') $config['static_dir'] = $base_url.'/assets';
 define('STATIC_DIR', $config['static_dir']);
 
-# 定义url常量
-if($config['url_type'] == 'GET' || $config['url_type'] == 'PATH_INFO') define("URL", $_SERVER['SCRIPT_NAME']); # uri带index.php
-else define("URL", $base_url); # uri不带index.php
+// 定义url常量
+if($config['url_type'] == 'GET' || $config['url_type'] == 'PATH_INFO') define("URL", $_SERVER['SCRIPT_NAME']); // uri带index.php
+else define("URL", $base_url); // uri不带index.php
 
-# 显示系统错误
+// 显示系统错误
 if($config['show_errors'])
 {
 	ini_set('display_errors', 'On');
@@ -749,7 +749,7 @@ else
 	error_reporting(0);
 }
 
-# 记录系统访问日志
+// 记录系统访问日志
 if($config['access_log'])
 {
 	$str ="\nREQUEST_URI:http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']."\n";
