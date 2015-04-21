@@ -3,7 +3,7 @@
 <head>
 <title> 记事本演示程序 -- 由 ePHP 驱动</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="stylesheet" type="text/css" href="<?php echo SOURCE;?>/css/common.css">
+<link rel="stylesheet" type="text/css" href="<?php echo STATIC_DIR;?>/css/common.css">
 <meta name="generator" content="WangXian" />
 <style>
 body,p,div{ line-height: 2em; }

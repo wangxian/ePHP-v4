@@ -137,9 +137,9 @@ class testController
 		echo Html::img('http://code.google.com/p/php-framework-ephp/logo?cct=1289279165')."<br />\n";
 
 		/** 仔细看生成的html。 **/
-		echo Html::link_tag(SOURCE.'/js/my.js')."\n";
-		echo Html::link_tag(SOURCE.'/css/header.css')."\n";
-		echo Html::link_tag(SOURCE.'/images/favicon.ico')."\n";
+		echo Html::link_tag(STATIC_DIR.'/js/my.js')."\n";
+		echo Html::link_tag(STATIC_DIR.'/css/header.css')."\n";
+		echo Html::link_tag(STATIC_DIR.'/images/favicon.ico')."\n";
 
 		/** 数据列表。 **/
 		$arr = array('WangXian', '木頭', 'Bob', 'Locort', 'brongh', '老常');

@@ -1,5 +1,5 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="stylesheet" type="text/css" href="<?php echo SOURCE;?>/css/common.css">
+<link rel="stylesheet" type="text/css" href="<?php echo STATIC_DIR;?>/css/common.css">
 
 <h1>第三方扩展类(自定义类) 的使用</h1>
 <p>在开发过程中，你可能会需要函数或使用第三方的类，或者你自己写的类，那么在ePHP中如何使用自定义函数，如何自定义类呢？</p>

@@ -1,5 +1,5 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="stylesheet" type="text/css" href="<?php echo SOURCE;?>/css/common.css">
+<link rel="stylesheet" type="text/css" href="<?php echo STATIC_DIR;?>/css/common.css">
 
 <h1>强大的url生成器 U()函数</h1>
 <p>强大的U()函数,可以根据url_type生成不同类型的。现在url_type支持生成3中方式的url: <samp>PATH_INFO、GET、SEO</samp>

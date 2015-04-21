@@ -1,5 +1,5 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="stylesheet" type="text/css" href="<?php echo SOURCE;?>/css/common.css">
+<link rel="stylesheet" type="text/css" href="<?php echo STATIC_DIR;?>/css/common.css">
 
 <h1>Widget 测试</h1>
 <p>

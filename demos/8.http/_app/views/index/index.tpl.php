@@ -1,5 +1,5 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="stylesheet" type="text/css" href="<?php echo SOURCE;?>/css/common.css">
+<link rel="stylesheet" type="text/css" href="<?php echo STATIC_DIR;?>/css/common.css">
 
 <h1>ePHP扩展库 Http类。</h1>
 <p>Http类为系统自带的类。其实ePHP可以很方便的扩展第三方类。只要把类放到exts/下，名为{类名.class.php}然后直接new就行了。如果是static class 那xxxx::xxxx()就可以了。</p>

@@ -1,5 +1,5 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="stylesheet" type="text/css" href="<?php echo SOURCE;?>/css/common.css">
+<link rel="stylesheet" type="text/css" href="<?php echo STATIC_DIR;?>/css/common.css">
 
 <h1>正则配置类 -- Regexp</h1>
 <p>Regexp类，提供了几个简单的严重规则，你也可以自定义正则规则。</p>

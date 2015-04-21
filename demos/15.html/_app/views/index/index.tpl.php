@@ -1,5 +1,5 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="stylesheet" type="text/css" href="<?php echo SOURCE;?>/css/common.css">
+<link rel="stylesheet" type="text/css" href="<?php echo STATIC_DIR;?>/css/common.css">
 
 <h1>html伪静态化和url路由</h1>
 <p>如果要进行seo的优化，你可以用简单的html伪静态加上后缀，或更深层次的url改变，url路由。</p>
