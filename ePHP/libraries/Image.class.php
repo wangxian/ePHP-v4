@@ -178,4 +178,4 @@ class Image
 
 }
 /* End of file Image.class.php */
-/* Location: ./_framework/libraries/Image.class.php */
+/* Location: ./ePHP/libraries/Image.class.php */

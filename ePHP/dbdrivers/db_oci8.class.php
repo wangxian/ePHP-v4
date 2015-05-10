@@ -17,8 +17,8 @@ class db_oci8
 	{
 		//@todo ......
 	}
-	
+
 	//@todo ......
 }
 /* End of file oci8.class.php */
-/* Location: ./_framework/dbdrivers/oci8.class.php */
+/* Location: ./ePHP/dbdrivers/oci8.class.php */

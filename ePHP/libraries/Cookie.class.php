@@ -55,4 +55,4 @@ class Cookie
 	}
 }
 /* End of file Cookie.class.php */
-/* Location: ./_framework/libraries/Cookie.class.php */
+/* Location: ./ePHP/libraries/Cookie.class.php */
