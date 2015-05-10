@@ -7,7 +7,7 @@
  * @version 4.0
  * @author WangXian
  * @package libraries
- * @email wo@wangxian.me
+ * @email wo#wangxian.me
  * @creation_date 2011-1-10
  * @last_modified 2011-8-3
  +------------------------------------------------------------------------------
@@ -92,7 +92,7 @@ class Cache
  * @version 4.0
  * @author WangXian
  * @package libraries
- * @email wo@wangxian.me
+ * @email wo#wangxian.me
  * @creation_date 2011-8-3
  * @last_modified 2011-8-3
  * @ignore
@@ -215,7 +215,7 @@ class FileCacheX
  * @version 4.0
  * @author WangXian
  * @package libraries
- * @email wo@wangxian.me
+ * @email wo#wangxian.me
  * @creation_date 2011-8-3
  * @last_modified 2011-8-3
  * @ignore
@@ -304,7 +304,7 @@ class MemCacheX
  * @version 4.0
  * @author WangXian
  * @package libraries
- * @email wo@wangxian.me
+ * @email wo#wangxian.me
  * @creation_date 2011-8-3
  * @last_modified 2011-8-3
  * @ignore

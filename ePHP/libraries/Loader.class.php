@@ -5,7 +5,7 @@
  +------------------------------------------------------------------------------
  * @version 3.2
  * @author WangXian
- * @email wo@wangxian.me
+ * @email wo#wangxian.me
  * @package  libraries
  * @creation_date 2011-06-04 23:15:26
  * @last_modified 2011-06-04 22:24:46

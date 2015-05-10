@@ -7,7 +7,7 @@
  * @version 4.0
  * @author WangXian
  * @package libraries
- * @email wo@wangxian.me
+ * @email wo#wangxian.me
  * @creation_date 2010-3-10
  * @last_modified 2011-8-3
  +------------------------------------------------------------------------------

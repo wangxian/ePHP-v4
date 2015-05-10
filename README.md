@@ -39,7 +39,7 @@ freedom、freedom、freedom 来吧，ePHP应该适合你，简约而不简单！
 详请检出svn中的代码，你会发现其高效率和神奇.
 
 如发现问题，请来【ePHP豆瓣讨论组】：http://www.douban.com/group/ephp
-或直接给我们发邮件：wo@wangxian.me
+或直接给我们发邮件：wo#wangxian.me
 不胜感激！！！
 
 
@@ -51,5 +51,5 @@ ePHP框架的源代码完全开放，在Apache2.0许可下, 可免费应用于�
 请保留ePHP版权字样，不胜感谢。
 禁止把ePHP框架修改后重新发布，谢谢！
 ePHP主创人员及联系方式
-木頭(发起者&开发) wo@wangxian.me
+木頭(发起者&开发) wo#wangxian.me
 老常(测试&需求提交)

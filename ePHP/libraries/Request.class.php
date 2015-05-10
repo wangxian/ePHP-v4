@@ -6,7 +6,7 @@
  +------------------------------------------------------------------------------
  * @version 3.0
  * @author WangXian
- * @email wo@wangxian.me
+ * @email wo#wangxian.me
  * @package  libraries
  * @creation_date 2011-1-14 下午03:47:37
  * @last_modified 2011-1-14 下午03:47:37

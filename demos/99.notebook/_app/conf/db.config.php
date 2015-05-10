@@ -10,6 +10,7 @@
  * @modified date 2010-10-13 16:13:41
  +------------------------------------------------------------------------------
  */
+if(!defined('SAE_ACCESSKEY')):
 return array
 (
 	'default'=>
@@ -43,6 +44,45 @@ return array
 	 	'tb_prefix'	=> 't_'			#表前缀
 	 )
 );
+else:
+return array
+(
+	/* default */
+	'default'=>
+	 array
+	 (
+		'host'			=> SAE_MYSQL_HOST_M,#服务器地址
+		'user'			=> SAE_MYSQL_USER,	#数据库用户名
+		'password'		=> SAE_MYSQL_PASS,	#密码
+		'dbname'		=> SAE_MYSQL_DB,		#数据库
+		'port'			=> SAE_MYSQL_PORT,	#数据库
+	 	'tb_prefix'		=> 't_'			#表前缀。只有在使用链式操作时有用
+	 ),
 
-/* End of file db.config.php */
-/* Location: db.config.php */
+	/* master */
+	'master'=>
+	 array
+	 (
+		'host'			=> SAE_MYSQL_HOST_M,#服务器地址
+		'user'			=> SAE_MYSQL_USER,	#数据库用户名
+		'password'		=> SAE_MYSQL_PASS,	#密码
+		'dbname'		=> SAE_MYSQL_DB,		#数据库
+		'port'			=> SAE_MYSQL_PORT,	#数据库
+	 	'tb_prefix'		=> 't_'			#表前缀。只有在使用链式操作时有用
+	 ),
+
+	/* salve */
+	'slave'=>
+	 array
+	 (
+		'host'			=> SAE_MYSQL_HOST_S,#服务器地址
+		'user'			=> SAE_MYSQL_USER,	#数据库用户名
+		'password'		=> SAE_MYSQL_PASS,	#密码
+		'dbname'		=> SAE_MYSQL_DB,		#数据库
+		'port'			=> SAE_MYSQL_PORT,	#数据库
+	 	'tb_prefix'		=> 't_'			#表前缀。只有在使用链式操作时有用
+	 )
+);
+endif;
+
+

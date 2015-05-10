@@ -22,7 +22,7 @@
  +------------------------------------------------------------------------------
  * @version 3.2
  * @author WangXian
- * @email wo@wangxian.me
+ * @email wo#wangxian.me
  * @package  libraries
  * @creation_date 2010-10-17
  * @last_modified 2011-02-04 22:39:17

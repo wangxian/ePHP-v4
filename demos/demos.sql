@@ -31,7 +31,7 @@ CREATE TABLE `t_innodb` (
 -- ----------------------------
 -- Records of t_innodb
 -- ----------------------------
-INSERT INTO `t_innodb` VALUES ('178', 'wo@wangxian.me', 'wx', '0000-00-00 00:00:00');
+INSERT INTO `t_innodb` VALUES ('178', 'wo#wangxian.me', 'wx', '0000-00-00 00:00:00');
 
 -- ----------------------------
 -- Table structure for `t_notebook`

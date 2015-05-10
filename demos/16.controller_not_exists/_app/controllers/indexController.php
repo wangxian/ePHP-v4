@@ -5,7 +5,7 @@
  +------------------------------------------------------------------------------
  * @Version  2.2
  * @Author   WangXian
- * @E-mail    wo@wangxian.me
+ * @E-mail    wo#wangxian.me
  * @FileName  indexController.php
  * @Creation  date 2010-11-16 上午11:50:55
  * @Modified  date 2010-11-16 上午11:50:55

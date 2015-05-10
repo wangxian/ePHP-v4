@@ -5,7 +5,7 @@
  +------------------------------------------------------------------------------
  * @Version  2.3
  * @Author   WangXian
- * @E-mail    wo@wangxian.me
+ * @E-mail    wo#wangxian.me
  * @FileName  notebookModel.php
  * @Creation  date 2010-12-9 上午10:55:42
  * @Modified  date 2011-09-07

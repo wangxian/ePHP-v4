@@ -10,7 +10,7 @@ class emailController
 		$email = new Email('smtp.sina.com','mcp8815@sina.com', 'mcp8815123456');
 		$r = $email->from('mcp8815@sina.com', '王见')
 			  ->to('xian366@sina.com') // 如果要发给多个联系人，传递一个array()即可
-              ->cc('wo@wangxian.me') //抄送，参数同to()
+              ->cc('wo#wangxian.me') //抄送，参数同to()
               ->bcc('admin@totour.info') //密送，参数同to()
               ->subject('测试邮件--标题')
               ->message( $content )

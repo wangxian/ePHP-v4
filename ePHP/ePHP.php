@@ -5,7 +5,7 @@
  +------------------------------------------------------------------------------
  * @version 4.0
  * @author WangXian
- * @email wo@wangxian.me
+ * @email wo#wangxian.me
  * @package core
  * @creation_date 2010-3-10 23:15:26
  * @last_modified 2015-5-10
