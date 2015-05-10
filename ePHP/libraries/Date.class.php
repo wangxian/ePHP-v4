@@ -18,7 +18,7 @@
  +------------------------------------------------------------------------------
  * @version 3.2
  * @author WangXian
- * @email admin@loopx.cn
+ * @email wo@wangxian.me
  * @package libraries
  * @creation_date 2010-10-17
  * @last_modified 2011-06-04
@@ -60,7 +60,7 @@ class Date
 			return date('m-d H:i', $time);
 		}
 	}
-	
+
     /**
      * 得到当前日期
      * @param string $fmt :日期格式
@@ -72,7 +72,7 @@ class Date
         $times = $time?$time:time();
         return date($fmt,$times);
     }
-    
+
     /**
      * 得到当前日期时间
      * @param string $fmt :日期格式
@@ -83,7 +83,7 @@ class Date
     {
         return self::getDate($time,$fmt);
     }
-    
+
     /**
      * 计算日期天数差
      * 例子:"2005-10-20"-"2005-10-10"=10
@@ -114,7 +114,7 @@ class Date
     	$dateday = date("Y-m-d",strtotime($daystr,strtotime($date)));
     	return $dateday;
     }
-    
+
     /**
      * 计算日期加天数后的日期
      * @param string $date :如 "2005-10-20"
@@ -128,7 +128,7 @@ class Date
     	$dateday=date("Y-m-d",strtotime($daystr,strtotime($date)));
     	return $dateday;
     }
-    
+
     /**
      * 比较两个时间
      * @param string $timeA :格式如 "2006-10-12" 或 "2006-10-12 12:30" 或 "2006-10-12 12:30:50"
@@ -145,7 +145,7 @@ class Date
     	else if($a == $b)  return 0;
     	else               return -1;
     }
-    
+
     /**
      * 计算时间a减去时间b的差值
      * @param string $timeA :格式如 "2006-10-12" 或 "2006-10-12 12:30" 或 "2006-10-12 12:30:50"

@@ -5,7 +5,7 @@
  +------------------------------------------------------------------------------
  * @Version  2.3
  * @Author   WangXian
- * @E-mail    admin@loopx.cn
+ * @E-mail    wo@wangxian.me
  * @FileName  notebookModel.php
  * @Creation  date 2010-12-9 上午10:55:42
  * @Modified  date 2010-12-9 上午10:55:42
@@ -24,22 +24,22 @@ class notebookModel extends model
 					->limit( $pagecount*($page-1). ','.$pagecount )
 			 		->findPage();
 	}
-	
+
 	public function add_note($data)
 	{
 		return $this->table('t_notebook')->set( $data )->insert();
 	}
-	
+
 	public function update_note($id,$data)
 	{
 		return $this->table('t_notebook')->set( $data )->where("id='{$id}'")->update();
 	}
-	
+
 	public function del_note($id)
 	{
 		return $this->table('t_notebook')->where("id='{$id}'")->delete();
 	}
-	
+
 	public function note_info($id)
 	{
 		return $this->table('t_notebook')->where("id='{$id}'")->find();

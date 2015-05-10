@@ -5,7 +5,7 @@
  +------------------------------------------------------------------------------
  * @version 3.1
  * @author WangXian
- * @email admin@loopx.cn
+ * @email wo@wangxian.me
  * @package  libraries
  * @creation_date 2011-1-23 下午02:57:25
  * @last_modified 2011-05-03

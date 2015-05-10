@@ -1,6 +1,6 @@
 <?php
 /*
- * 查看如何操作SAE MySQL，http://n.loopx.cn/archives/ephp-sae-model-mysql.html
+ * 查看如何操作SAE MySQL，http://yiguozhou.sinaapp.com/archives/ephp-sae-model-mysql.html
  */
 class testModel extends model
 {
@@ -64,12 +64,12 @@ class testModel extends model
 //		echo $this->table('t_innodb')->set(array('name'=>'wx'))->insert();
 
 		//如果指定了insert_update()的更新内容，则会更新指定的内容到数据库，否则，忽略插入。
-//		echo $this->table('t_innodb')->set(array('name'=>'wx','email'=>'admin@loopx.cn'))->insert_update();
-//		echo $this->table('t_innodb')->set(array('name'=>'wx','email'=>'admin@loopx.cn'))->insert_update("updated_at ='".date('Y-m-d H:i:s')."'");
+//		echo $this->table('t_innodb')->set(array('name'=>'wx','email'=>'wo@wangxian.me'))->insert_update();
+//		echo $this->table('t_innodb')->set(array('name'=>'wx','email'=>'wo@wangxian.me'))->insert_update("updated_at ='".date('Y-m-d H:i:s')."'");
 
 
 
-		echo $this->table('t_innodb')->set(array('name'=>'wx','email'=>'admin@loopx.cn'))->insert_replace();
+		echo $this->table('t_innodb')->set(array('name'=>'wx','email'=>'wo@wangxian.me'))->insert_replace();
 		dump($this->table('t_innodb')->orderby('id desc')->limit(1)->find());
 	}
 

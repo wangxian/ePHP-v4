@@ -7,7 +7,7 @@
  * @version 4.0
  * @author WangXian
  * @package libraries
- * @email admin@loopx.cn
+ * @email wo@wangxian.me
  * @creation_date 2011-1-10
  * @last_modified 2011-9-19
  +------------------------------------------------------------------------------

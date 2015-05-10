@@ -19,7 +19,7 @@
  * @author  WangXian
  * @package ephp
  * @link	 http://code.google.com/p/php-framework-ephp/
- * @E-mail   admin@loopx.cn
+ * @E-mail   wo@wangxian.me
  * @creation date 2010-10-17 18:09:17
  * @modified date 2010-12-20 21:58:34
  +------------------------------------------------------------------------------

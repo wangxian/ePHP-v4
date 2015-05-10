@@ -9,7 +9,7 @@
  +------------------------------------------------------------------------------
  * @version 2.5
  * @author WangXian
- * @email admin@loopx.cn
+ * @email wo@wangxian.me
  * @package  libraries
  * @creation_date 2008.12.22
  * @last_modified 2011-06-05

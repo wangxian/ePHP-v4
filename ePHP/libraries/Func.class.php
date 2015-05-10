@@ -22,7 +22,7 @@
  +------------------------------------------------------------------------------
  * @version 3.2
  * @author WangXian
- * @email admin@loopx.cn
+ * @email wo@wangxian.me
  * @package  libraries
  * @creation_date 2010-10-17
  * @last_modified 2011-02-04 22:39:17
@@ -147,7 +147,7 @@ class Func
     	srand((double)microtime()*1000000);
     	return md5(uniqid(time().rand()));
     }
-	
+
     /**
      * 字符串截取，支持中文和其他编码
      * @param string $str 需要转换的字符串
@@ -434,7 +434,7 @@ class Func
 		$text =  nl2br(str_replace(' ', '&nbsp;', $text));
 		return $text; //define in QuickPHP\Libs\CoreFunction.inc.php
     }
-    
+
     /**
      * 安全base64_encode
      * 替换掉+ / = 字符，这样不用urldecode了

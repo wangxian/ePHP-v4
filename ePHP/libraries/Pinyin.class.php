@@ -8,7 +8,7 @@
  +------------------------------------------------------------------------------
  * @version 3.5
  * @author 佚名
- * @email admin@loopx.cn
+ * @email wo@wangxian.me
  * @package  libraries
  * @creation_date 2011-07-27 21:37:03
  * @last_modified 2011-07-27 21:37:03

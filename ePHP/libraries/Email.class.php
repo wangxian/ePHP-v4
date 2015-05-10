@@ -2821,7 +2821,7 @@ class SMTP
  * @version 4.0
  * @author WangXian
  * @package libraries
- * @email admin@loopx.cn
+ * @email wo@wangxian.me
  * @creation_date 2011-8-3
  * @last_modified 2011-8-3
  +------------------------------------------------------------------------------

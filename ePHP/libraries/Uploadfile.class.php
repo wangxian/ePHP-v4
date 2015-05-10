@@ -37,7 +37,7 @@
  +------------------------------------------------------------------------------
  * @version 3.0
  * @author WangXian
- * @email admin@loopx.cn
+ * @email wo@wangxian.me
  * @package  libraries
  * @creation_date 2010-8-17
  * @last_modified 2010-12-25 19:26:34
@@ -56,7 +56,7 @@
 		'png'=>array('image/x-png','image/png'),
 		'swf'=>array('application/x-shockwave-flash'),
  	 );
- 	 
+
      private $set = array(
          'fexts'=>'*',  //上传的文件扩展名集合,"*":表示任何文件;格式为:".jpg|.swf|.png"
          'ftype'=>'',   //可上传文件的类型,如果想上传更安全的文件(防止修改文件扩展名)请设置这个选择,如 "jpg,swf,gif"
@@ -71,7 +71,7 @@
 		  'thumb'=>array(array(50,40), //第一组尺寸, 50:缩略图最大宽度 40:缩略图最大高度
 		                 array(100,80),//第二级尺寸
 		                );
-		
+
 		  通过以上设置后,生成的缩略图文件名格式为:"[缩略图宽]_[缩略图高]_[上传后的文件名(包含扩展名)]_[thumb.jpg]"
 		  例如文件上传后的文件名为:"xxxxxx.jpg"则第一组尺寸生成后的缩略图文件名为:"50_40_xxxxxx.jpg"
 		*/
@@ -102,7 +102,7 @@
 		 	$this->inputName = $h;
 		 }
 	 }
-	 
+
 	 /**
 	  * 判断是否出错了
 	  * @return boolean

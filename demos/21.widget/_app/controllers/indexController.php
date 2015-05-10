@@ -5,7 +5,7 @@
  +------------------------------------------------------------------------------
  * @Version  2.3
  * @Author   WangXian
- * @E-mail    admin@loopx.cn
+ * @E-mail    wo@wangxian.me
  * @FileName  indexController.php
  * @Creation  date 2010-12-6 下午04:52:16
  * @Modified  date 2010-12-6 下午04:52:16

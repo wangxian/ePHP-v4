@@ -5,7 +5,7 @@
  +------------------------------------------------------------------------------
  * @Version   1.2
  * @Author    WangXian
- * @E-mail     admin@loopx.cn
+ * @E-mail     wo@wangxian.me
  * @package  framework
  * @FileName main.config.php
  * @Creation date 2010-10-12

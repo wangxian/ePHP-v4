@@ -6,7 +6,7 @@
  * @version 3.0
  * @author  WangXian
  * @package  dbdrivers
- * @email	<admin@loopx.cn>
+ * @email	<wo@wangxian.me>
  * @creation date 2011-2-22 下午05:09:34
  * @last modified 2011-6-11
  +------------------------------------------------------------------------------

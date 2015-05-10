@@ -7,7 +7,7 @@
  * @version 4.0
  * @author WangXian
  * @package libraries
- * @email admin@loopx.cn
+ * @email wo@wangxian.me
  * @creation_date 2010-3-10
  * @last_modified 2011-8-3
  +------------------------------------------------------------------------------
@@ -27,11 +27,11 @@ class Cookie
 	{
 		if(empty($domain)) $domain = '.'.$_SERVER['HTTP_HOST'];
 		setcookie($name,$value,$expire + time(),$path,$domain);
-		
+
 		//使cookie马上生效
 		$_COOKIE[$name] = $value;
 	}
-	
+
 	/** 删除cookie */
 	public static function delete($name)
 	{
@@ -39,10 +39,10 @@ class Cookie
 		setcookie($name, null, time()-3600, '/', $domain);
 		unset($_COOKIE[$name]);
 	}
-	
+
 	/** 删除所有的cookies */
 	public static function deleteAll() { foreach ($_COOKIE as $k=>$v) self::delete($k); }
-	
+
 	/**
 	 * 获取cookie
 	 * @param string $name

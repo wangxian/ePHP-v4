@@ -6,7 +6,7 @@
  * @ignore
  * @version 2.2
  * @author WangXian
- * @email admin@loopx.cn
+ * @email wo@wangxian.me
  * @package  libraries
  * @creation_date 2010-10-17
  * @last_modified 2010-12-25 19:18:47

@@ -5,7 +5,7 @@
  +------------------------------------------------------------------------------
  * @Version  2.2
  * @Author   WangXian
- * @E-mail    admin@loopx.cn
+ * @E-mail    wo@wangxian.me
  * @FileName  indexController.php
  * @Creation  date 2010-11-16 上午11:50:55
  * @Modified  date 2010-11-16 上午11:50:55
@@ -19,18 +19,18 @@ class indexController extends controller
 		$view = new View();
 		$view->render();
 	}
-	
+
 	function errorAction()
 	{
 		$this->show_success();
 	}
-	
+
 	function sucessAction()
 	{
 		$this->show_error('error!');
 	}
-	
-	
+
+
 //	/**
 //	 * 操作失败
 //	 * @param string  $message 错误消息
