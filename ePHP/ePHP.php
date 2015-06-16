@@ -940,7 +940,6 @@ set_error_handler("error_handler");
 $config = array
 (
     'debug'           => false,
-    'access_log'      => false,
     'exception_log'   => false,
     'sql_log'         => false,
     'show_errors'     => true,
@@ -960,19 +959,18 @@ if (file_exists(APP_PATH . '/conf/main.config.php'))
 
     // 自定义缓存和日志目录
     if (empty($config['log_dir']))
-        {
+    {
         $config['log_dir'] = APP_PATH . '/runtime/logs';
     }
 
     if (empty($config['cache_dir']))
-        {
+    {
         $config['cache_dir'] = APP_PATH . '/runtime/cache';
     }
 
     // 如果debug为true，则下面四项强制为true
     if ($config['debug'])
-        {
-        $config['access_log']    = true;
+    {
         $config['exception_log'] = true;
         $config['sql_log']       = true;
         $config['show_errors']   = true;
@@ -1013,14 +1011,4 @@ else
 {
     ini_set('display_errors', 'Off');
     error_reporting(0);
-}
-
-// 记录系统访问日志
-if ($config['access_log'])
-    {
-    $str = "\nREQUEST_URI:http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . "\n";
-    $str .= 'REMOTE_ADDR:' . $_SERVER['REMOTE_ADDR'] . "\n";
-    $str .= isset($_SERVER['HTTP_USER_AGENT']) ? 'HTTP_USER_AGENT:' . $_SERVER['HTTP_USER_AGENT'] . "\n" : '';
-    $str .= '------------------------------';
-    wlog('AccessLog', $str);
 }
