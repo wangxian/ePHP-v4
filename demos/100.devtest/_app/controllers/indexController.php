@@ -20,8 +20,9 @@ class indexController extends controller
 	}
 
 	public function readAction()
-	{//getp()演示
-		//测试url：/index.php/index/read/120.html
+	{	// getp()演示
+		// 测试url：/index.php/index/read/120.html
+		// dumpdie($_GET);
 		dump(getp(1)); //index
 		dump(getp(2)); //read
 		dump(getp(3)); //120

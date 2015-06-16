@@ -499,8 +499,8 @@ function getp($pos, $default='', $callback='')
     if( empty($url_part) )
     {
         // only first time
-        $posi = strpos($_SERVER['REQUEST_URI'], '?');
-        $url = $posi ? substr($_SERVER['REQUEST_URI'], 1, $posi) : substr($_SERVER['REQUEST_URI'], 1);
+        $posi = strpos($_SERVER['PATH_INFO'], '?');
+        $url = $posi ? substr($_SERVER['PATH_INFO'], 1, $posi) : substr($_SERVER['PATH_INFO'], 1);
         if(!empty($url))
         {
             $url_part = explode('/', $url);
