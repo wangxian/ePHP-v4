@@ -40,7 +40,7 @@ freedom、freedom、freedom 来吧，ePHP应该适合你，简约而不简单！
 如果你喜欢简单、快速、敏捷的开发，你可以加入我们！  
 详请检出Github中的代码，你会发现其高效率和神奇.  
 
-如发现问题，请来 [ePHP豆瓣讨论组](http://www.douban.com/group/ephp)或直接给我们发邮件：wo#wangxian.me 不胜感激！！！
+如发现问题，请来[ePHP豆瓣讨论组](http://www.douban.com/group/ephp)或直接给我们发邮件：wo#wangxian.me 不胜感激！！！
 
 项目创建时间：2010-3-14 9:15:58
 
