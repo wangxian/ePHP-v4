@@ -7,10 +7,11 @@ freedom、freedom、freedom 来吧，ePHP应该适合你，简约而不简单！
 
 快速、高效是我们追求的目标，我们对每一行代码进行了优化，保证最高效率，即使是一行简单的赋值操作，我们也经过了仔细的推敲，不浪费一滴性能。并用最简单的方式来实现复杂功能需求。
 
-【查看ePHP在线演示(SAE平台)】http://ephp.sinaapp.com  
-【在线api】http://ephp.sinaapp.com/api  
-【压缩包下载】https://github.com/wangxian/ePHP/tarball/master  
-【豆瓣小组】http://www.douban.com/group/ephp  
+- 查看ePHP在线演示(SAE平台) <http://ephp.sinaapp.com>  
+- 演示源码 <https://github.com/wangxian/ePHP-demos>  
+- 在线api <http://ephp.sinaapp.com/api>  
+- 压缩包下载 <https://github.com/wangxian/ePHP/tarball/master>  
+- 豆瓣小组 <http://www.douban.com/group/ephp>  
 
 ## 主要特性如下：
 * 基于MVC体系
