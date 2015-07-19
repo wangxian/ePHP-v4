@@ -1,9 +1,8 @@
 #.*
 .DS_Store
 
-#.gitignore
-#.nodemonignore
-#.npmignore
+.nodemonignore
+.npmignore
 .project
 .settings/
 .buildpath

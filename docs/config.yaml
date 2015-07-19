@@ -1,8 +1,0 @@
-# SAE config file for ePHP
-
----
-
-appname: ephp
-version: 1
-handle:
- - rewrite: if(!is_dir() && !is_file() && path ~ "^(.*)$") goto "index.php$1?%{QUERY_STRING}"
